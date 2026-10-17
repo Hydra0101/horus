@@ -159,13 +159,15 @@ class ReportOutput(AgentOutput):
     total_findings_rejected: int = 0
     execution_metadata: dict[str, Any] = Field(default_factory=dict)
 
-
-
-
 # Registrar schemas en el registry global (necesario para AgentContract)
 from god_tier_agency.agents.contract import _register_schema
 _register_schema("ReportInput", ReportInput)
 _register_schema("ReportOutput", ReportOutput)
+
+
+
+
+
 # ============================================================================
 # SANITIZACIÓN Y REDACT
 # ============================================================================

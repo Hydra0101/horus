@@ -320,13 +320,15 @@ class ScannerOutput(AgentOutput):
     unique_vulns: int = 0
     execution_metadata: dict[str, Any] = Field(default_factory=dict)
 
-
-
-
 # Registrar schemas en el registry global (necesario para AgentContract)
 from god_tier_agency.agents.contract import _register_schema
 _register_schema("ScannerInput", ScannerInput)
 _register_schema("ScannerOutput", ScannerOutput)
+
+
+
+
+
 # ============================================================================
 # AGENT
 # ============================================================================

@@ -85,16 +85,18 @@ class EvasionOutput(AgentOutput):
 
 
 
-# Registrar schemas en el registry global (necesario para AgentContract)
-from god_tier_agency.agents.contract import _register_schema
-_register_schema("EvasionInput", EvasionInput)
-_register_schema("EvasionOutput", EvasionOutput)
 class EvasionInput(AgentInput):
     target_os: Literal["windows", "linux", "macos"] = "windows"
     target_arch: Literal["x64", "x86", "arm64"] = "x64"
     edr_in_scope: list[str] = Field(default_factory=lambda: ["crowdstrike", "sentinelone", "defender"])
     c2_framework: Literal["sliver", "mythic", "havoc", "cobalt_strike"] = "sliver"
     evasion_level: Literal["standard", "aggressive", "paranoid"] = "paranoid"
+
+# Registrar schemas en el registry global (necesario para AgentContract)
+from god_tier_agency.agents.contract import _register_schema
+_register_schema("EvasionInput", EvasionInput)
+_register_schema("EvasionOutput", EvasionOutput)
+
 
 
 # ============================================================================

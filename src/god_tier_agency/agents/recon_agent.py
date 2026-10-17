@@ -359,13 +359,15 @@ class ReconOutput(AgentOutput):
     expanded_hosts: list[str] = Field(default_factory=list)
     execution_metadata: dict[str, Any] = Field(default_factory=dict)
 
-
-
-
 # Registrar schemas en el registry global (necesario para AgentContract)
 from god_tier_agency.agents.contract import _register_schema
 _register_schema("ReconInput", ReconInput)
 _register_schema("ReconOutput", ReconOutput)
+
+
+
+
+
 # ============================================================================
 # AGENT
 # ============================================================================
