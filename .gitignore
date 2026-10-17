@@ -1,0 +1,55 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Backups y temporales
+*.bak
+*.bak.*
+*.tmp
+*.swp
+*~
+
+# Secretos y configuración sensible
+.env
+.env.*
+!.env.example
+secrets/
+*.key
+*.pem
+*.p12
+*.pfx
+signing_key*
+canary_seed*
+
+# Runtime
+*.db
+*.sqlite
+*.sqlite3
+logs/
+*.log
+audit/
+evidence/
+reports/
+*.pdf
+*.sarif
+
+# Testing / coverage
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

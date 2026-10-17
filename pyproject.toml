@@ -1,0 +1,38 @@
+[project]
+name = "god-tier-agency"
+version = "0.1.0"
+description = "God-Tier Red Teaming Agency — Conclave Absolute"
+readme = "README.md"
+authors = [
+    { name = "Miller Alejandro Ospina Londoño", email = "efectomiller@gmail.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "docker>=7.2.0",
+    "openai>=3.31.0",
+    "pydantic>=2.14.1",
+    "pydantic-settings>=2.16.0",
+    "python-dotenv>=1.2.4",
+    "rich>=15.0.0",
+    "structlog>=26.1.0",
+    "tenacity>=9.2.1",
+    "typer>=0.27.3",
+    "cryptography>=43.0",
+    "reportlab>=4.2",
+    "defusedxml>=0.7.1",
+]
+
+[project.optional-dependencies]
+pdf = ["weasyprint>=62"]
+dev = ["pytest>=8.3", "pytest-asyncio>=0.24", "ruff>=0.6", "mypy>=1.11"]
+
+[project.scripts]
+god-tier-agency = "god_tier_agency:main"
+
+[build-system]
+requires = ["uv_build>=0.13.1,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-root = "src"
+module-name = "god_tier_agency"
